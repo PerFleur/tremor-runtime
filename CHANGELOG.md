@@ -1,4 +1,9 @@
 # Changelog
+## 0.13 UNRELEASED 
+
+### Breaking Changes
+
+- update grok to 0.2, optional patterns are now omitted no longer ""
 
 ### New features
 - Add reverse functions and tests for arrays and strings, add sort test for arrays
