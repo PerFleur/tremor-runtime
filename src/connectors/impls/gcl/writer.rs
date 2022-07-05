@@ -48,7 +48,7 @@ pub(crate) struct Config {
     /// "labels": {
     ///   "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
     /// ```    
-    #[serde(default = "default_resource")]
+    #[serde(default = "Default::default")]
     pub resource: Option<simd_json::OwnedValue>,
 
     // Optional. Whether valid entries should be written even if some other entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any entry is not written, then the response status is the error associated with one of the failed entries and the response includes error details keyed by the entries' zero-based index in the entries.write method.
