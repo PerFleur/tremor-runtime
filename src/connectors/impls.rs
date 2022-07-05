@@ -28,8 +28,9 @@ pub(crate) mod elastic;
 pub(crate) mod exit;
 /// file connector implementation
 pub(crate) mod file;
-/// Google Big Query
+/// Google
 pub(crate) mod gbq;
+pub(crate) mod gcl;
 pub(crate) mod gpubsub;
 /// HTTP
 pub(crate) mod http;

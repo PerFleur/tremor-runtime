@@ -323,6 +323,10 @@ error_chain! {
             description("GBQ Sink failed")
                 display("GBQ Sink failed: {}", msg)
         }
+        GclSinkFailed(msg: &'static str) {
+            description("Google Cloud Logging Sink failed")
+                display("Google Cloud Logging Sink failed: {}", msg)
+        }
         ClientNotAvailable(name: &'static str, msg: &'static str) {
             description("Client not available")
                 display("{} client not available: {}", name, msg)
@@ -334,6 +338,10 @@ error_chain! {
         BigQueryTypeMismatch(expected: &'static str, actual:value_trait::ValueType) {
             description("Type in the message does not match BigQuery type")
                 display("Type in the message does not match BigQuery type. Expected: {}, actual: {:?}", expected, actual)
+        }
+        GclTypeMismatch(expected: &'static str, actual:value_trait::ValueType) {
+            description("Type in the message does not match Google Cloud Logging API type")
+                display("Type in the message does not match Google Cloud Logging API type. Expected: {}, actual: {:?}", expected, actual)
         }
     }
 }
