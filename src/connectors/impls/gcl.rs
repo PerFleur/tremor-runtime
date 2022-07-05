@@ -33,7 +33,7 @@ fn random_span_id_value(ingest_ns_seed: u64) -> Value<'static> {
 fn random_trace_id_value(ingest_ns_seed: u64) -> Value<'static> {
     let mut rng = tremor_common::rand::make_prng(ingest_ns_seed);
     let span_id: String = (0..16)
-        .map(|_| rng.gen_range(0_u8..=255_u8))
+        .map(|_| rng.gen<u8>())
         .map(|b| format!("{:02x}", b))
         .collect();
     Value::from(span_id)
