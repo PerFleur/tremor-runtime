@@ -43,9 +43,11 @@ pub(crate) struct Config {
 
     // Optional. A default monitored resource object that is assigned to all log entries in entries that do not specify a value for resource. Example:
     //
-    // { "type": "gce_instance",
-    // "labels": {
-    //   "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+    /// ```json
+    /// { "type": "gce_instance",
+    /// "labels": {
+    ///   "zone": "us-central1-a", "instance_id": "00000000000000000000" }}
+    /// ```    
     #[serde(default = "default_resource")]
     pub resource: Option<simd_json::OwnedValue>,
 
